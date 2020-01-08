@@ -1,0 +1,12 @@
+h1 {
+    color: red;
+}
+
+.taskBox {
+    margin: 0 auto;
+    height: 30px;
+    width: 500px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}

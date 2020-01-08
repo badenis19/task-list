@@ -1,0 +1,17 @@
+h1 {
+  color: red;
+}
+
+.taskBox {
+  margin: 0 auto;
+  height: 30px;
+  width: 500px;
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=style.css.map */
