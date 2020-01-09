@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import Task from "./Task";
 import uuid from "uuid/v1"; // use to auto-generate unique ids (IMPORTANT - npm install uuid AND yarn install )
 
@@ -8,7 +8,17 @@ const TaskInput = () => {
     const [inputValue, setInputValue] = useState("");
 
     // tasks is an array of objects
-    const [tasks, setTasks] = useState([]);
+    // const [tasks, setTasks] = useState([]);
+    const [tasks, setTasks] = useState( () => {
+        const localData = localStorage.getItem("tasks");
+        return localData ? JSON.parse(localData) : [];
+    });
+    
+
+    // the second paramter [tasks] means whenever the tasks array changes, run this hook (useEffect)
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks))
+    }, [tasks])
 
     // to add task into task lists array
     const addTask = () => {
@@ -24,7 +34,9 @@ const TaskInput = () => {
         setInputValue(e.target.value)
     }
 
+    // To remove task from the list (onclick)
     const removeTask = (taskToDelete) => {
+        // removes tasks from the list when the task id is equal to the one we want to delete
         setTasks(tasks.filter((task) => {
             return task.id !== taskToDelete.id
         }))
@@ -35,6 +47,7 @@ const TaskInput = () => {
             <input type="text" value={inputValue} placeholder="Enter task name" onChange={updateInputValue}/>
             <input type="button" value="submit" onClick={(e) => addTask(e)}/>
             {tasks.map((task)=> (
+                // rendering each task on the page, passing the task OBJECT
                 <div key={task.id}>
                     < Task mytask={task} removeTask={removeTask}/> 
                 </div>
