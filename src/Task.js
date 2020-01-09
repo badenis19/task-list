@@ -1,13 +1,13 @@
 import React from "react";
 import "./task.css"
 
-
-const Task = ({name, removeFunction}) => {
+// my task is the task object
+const Task = ({mytask, removeTask}) => {
     return (
         <div>
             <div className="taskBox">
-                <h1>{name}</h1>
-                <div onClick={() => removeFunction(name)}>-</div>
+                <h1>{mytask.description}</h1>
+                <div onClick={() => removeTask(mytask)}>-</div>
             </div>
         </div>
     )

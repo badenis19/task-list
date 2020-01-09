@@ -4,42 +4,39 @@ import uuid from "uuid/v1"; // use to auto-generate unique ids (IMPORTANT - npm 
 
 const TaskInput = () => {
 
-    const [task, setTask] = useState("");
+    // the input value the current task, empty by default
+    const [inputValue, setInputValue] = useState("");
 
-    //Todo
-    // const [task, setTask] = useState({
-    //     description: "",
-    //     id: uuid()
-    // });
-
+    // tasks is an array of objects
     const [tasks, setTasks] = useState([]);
 
+    // to add task into task lists array
     const addTask = () => {
-        setTasks([...tasks, task ]) // adding the task in the task list 
-        setTask(''); // resetting the input to empty 
+        setTasks([...tasks, { // getting the current tasks array and adding the description and id 
+            description: inputValue,
+            id: uuid()
+        } ]) 
+        setInputValue(""); // resetting the input to be empty
     }
 
-    const updateTask = (e) => {
-        setTask(e.target.value)
+    // function to update the value of the input 
+    const updateInputValue = (e) => {
+        setInputValue(e.target.value)
     }
 
     const removeTask = (taskToDelete) => {
-        // console.log("REMOVED")
         setTasks(tasks.filter((task) => {
-            return task != taskToDelete
+            return task.id !== taskToDelete.id
         }))
     }
 
     return (
         <div>
-            <input type="text" value={task} placeholder="Enter task name" onChange={updateTask}/>
+            <input type="text" value={inputValue} placeholder="Enter task name" onChange={updateInputValue}/>
             <input type="button" value="submit" onClick={(e) => addTask(e)}/>
-            {/* <p>{tasks}</p> */}
-            {/* <h1 onClick={() => removeTask()}>Test</h1> */}
             {tasks.map((task)=> (
-                // <li>{task}</li>
-                <div>
-                    < Task name={task} removeFunction={removeTask}/> 
+                <div key={task.id}>
+                    < Task mytask={task} removeTask={removeTask}/> 
                 </div>
             )) }
         </div>
