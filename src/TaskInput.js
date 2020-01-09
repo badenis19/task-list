@@ -7,15 +7,16 @@ const TaskInput = () => {
     // the input value the current task, empty by default
     const [inputValue, setInputValue] = useState("");
 
-    // tasks is an array of objects
-    // const [tasks, setTasks] = useState([]);
+    // tasks is an array of objects.
+    /* setting the default value to be what is stored in local storage if not empty,
+    if empty set it an empty array*//
     const [tasks, setTasks] = useState( () => {
         const localData = localStorage.getItem("tasks");
         return localData ? JSON.parse(localData) : [];
     });
     
 
-    // the second paramter [tasks] means whenever the tasks array changes, run this hook (useEffect)
+    // the second paramater [tasks] means whenever the tasks array changes, run this hook (useEffect)
     useEffect(() => {
         localStorage.setItem("tasks", JSON.stringify(tasks))
     }, [tasks])
@@ -57,3 +58,6 @@ const TaskInput = () => {
 };
 
 export default TaskInput;
+
+
+// local storage: https://www.youtube.com/watch?v=SOnMln3W0U8
