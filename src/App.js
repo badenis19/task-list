@@ -6,8 +6,21 @@ import TaskInput from "./TaskInput";
 function App() {
   return (
     <div className="App">
-     < TaskInput />
-     {/* < Task /> */}
+
+      <div className="header">
+        <div><h3>Simple task-list</h3></div>
+      </div>
+      
+      <h3 className="title">Enter as task:</h3>
+      <div className="main-container">
+
+        <div className="inside-main">
+          <div>
+            < TaskInput />
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }

@@ -6,8 +6,9 @@ const Task = ({mytask, removeTask}) => {
     return (
         <div>
             <div className="taskBox">
-                <h1>{mytask.description}</h1>
-                <div onClick={() => removeTask(mytask)}>-</div>
+                <div><h3>{mytask.description}</h3></div>
+                {/* <div onClick={() => removeTask(mytask)}>-</div> */}
+                <div className="btn btn-danger"  onClick={() => removeTask(mytask)}>-</div>
             </div>
         </div>
     )

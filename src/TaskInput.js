@@ -9,7 +9,7 @@ const TaskInput = () => {
 
     // tasks is an array of objects.
     /* setting the default value to be what is stored in local storage if not empty,
-    if empty set it an empty array*//
+    if empty set it an empty array*/
     const [tasks, setTasks] = useState( () => {
         const localData = localStorage.getItem("tasks");
         return localData ? JSON.parse(localData) : [];
@@ -45,8 +45,11 @@ const TaskInput = () => {
 
     return (
         <div>
-            <input type="text" value={inputValue} placeholder="Enter task name" onChange={updateInputValue}/>
-            <input type="button" value="submit" onClick={(e) => addTask(e)}/>
+            <div className="input">
+                <input className="input-box" type="text" value={inputValue} placeholder="Enter task name" onChange={updateInputValue}/>
+                <input className="input-button btn btn-primary mb-1" type="button" value="submit" onClick={(e) => addTask(e)}/>
+            </div>
+
             {tasks.map((task)=> (
                 // rendering each task on the page, passing the task OBJECT
                 <div key={task.id}>
@@ -56,7 +59,7 @@ const TaskInput = () => {
         </div>
     );
 };
-
+ 
 export default TaskInput;
 
 

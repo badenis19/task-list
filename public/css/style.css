@@ -1,17 +1,65 @@
-h1 {
-  color: red;
-}
-
 .taskBox {
   margin: 0 auto;
-  height: 30px;
+  height: 39px;
   width: 500px;
-  border: 1px solid black;
+  border: 1px solid lightgray;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 5px;
+  margin-bottom: 1px;
+}
+
+.header {
+  height: 5vh;
+  width: 100vw;
+  background: black;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.main-container {
+  height: 60vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 30px;
+}
+
+.title {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.inside-main {
+  margin: 0 auto;
+}
+
+.input {
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.input-box {
+  width: 400px;
+  height: 40px;
+}
+
+.input-button {
+  width: 100px;
+  height: 40px;
 }
 /*# sourceMappingURL=style.css.map */
