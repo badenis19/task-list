@@ -1,7 +1,13 @@
+.task-title {
+  height: 39px;
+  width: 600px;
+  text-align: center;
+}
+
 .taskBox {
   margin: 0 auto;
   height: 39px;
-  width: 500px;
+  width: 600px;
   border: 1px solid lightgray;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,7 +19,6 @@
       -ms-flex-align: center;
           align-items: center;
   padding-left: 5px;
-  margin-bottom: 1px;
 }
 
 .header {
@@ -54,6 +59,7 @@
 }
 
 .input-box {
+  margin-top: 20px;
   width: 400px;
   height: 40px;
 }

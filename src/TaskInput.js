@@ -50,6 +50,10 @@ const TaskInput = () => {
                 <input className="input-button btn btn-primary mb-1" type="button" value="submit" onClick={(e) => addTask(e)}/>
             </div>
 
+            <div className="task-title">
+                <h3>Tasks</h3>
+            </div>
+
             {tasks.map((task)=> (
                 // rendering each task on the page, passing the task OBJECT
                 <div key={task.id}>
