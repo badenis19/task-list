@@ -19,6 +19,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding-left: 5px;
+  background-color: white;
 }
 
 .header {
@@ -35,12 +36,14 @@
 }
 
 .main-container {
-  height: 60vh;
+  height: 86vh;
   width: 100vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-top: 30px;
+  background-image: url("https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1055&q=80");
+  background-size: cover;
 }
 
 .title {
