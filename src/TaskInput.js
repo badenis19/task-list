@@ -55,7 +55,6 @@ const TaskInput = () => {
             </div>
 
             {tasks.map((task)=> (
-                // rendering each task on the page, passing the task OBJECT
                 <div key={task.id}>
                     < Task mytask={task} removeTask={removeTask}/> 
                 </div>
@@ -65,6 +64,3 @@ const TaskInput = () => {
 };
  
 export default TaskInput;
-
-
-// local storage: https://www.youtube.com/watch?v=SOnMln3W0U8
